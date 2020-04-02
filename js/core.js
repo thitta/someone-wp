@@ -31,7 +31,7 @@ function hidePostFooter() {
 }
 
 function addCC() {
-  const text="若無特別聲明，本站圖文皆採 CC  授權 [BY-NC-SA]";
+  const text="若無特別聲明，本站圖文皆採 CC 授權 [BY-NC-SA]";
   jQuery(".site-info").html(text);
 }
 
