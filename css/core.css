@@ -129,7 +129,7 @@ span.cnEnSpace {
     width: 0.16em;
 }
 
-code + span.cnEnSpace {
+code span.cnEnSpace {
     display: none !important;
 }
 
@@ -150,9 +150,11 @@ code {
     color: #808080 !important;
 }
 
-.textDescription img{
+.textDescription img {
     margin-bottom: 0.4em;
 }
+
+/* list style */
 
 .entry-content ul {
     list-style: disc;
@@ -166,7 +168,15 @@ code {
     list-style: square !important;
 }
 
+/* pre, sup */
+
 pre {
+    font-size: 0.8em !important;
+}
+
+sup {
+    color: #808080 !important;
+    bottom: 0.3em !important;
     font-size: 0.8em !important;
 }
 
@@ -176,6 +186,7 @@ pre {
     display: none;
 }
 
-.post-thumbnail img{
-    width: 0; height: 0;
+.post-thumbnail img {
+    width: 0;
+    height: 0;
 }

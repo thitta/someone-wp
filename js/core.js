@@ -1,19 +1,21 @@
 jQuery(document).ready(function () {
+  // page element
   helloSomeone();
-  setSocialLinkTargetBlank();
-  setImageDescriptionCSS();
-  hidePostFooter();
-  hidePrevNexBtn();
-  addCC();
+  hideElement();
+  setTargetBlank();
+  changeCopyRight();
   changeDiscussTitle();
-  padCnEnAll()
+  // post layout
+  appendSupTag();
+  setImageDescriptionCSS();
+  padCnEnAll();
 });
 
-function helloSomeone(){
-  console.log("Welcome to someone.tw");
+function helloSomeone() {
+  console.log("===== Welcome to someone.tw =====");
 }
 
-function setSocialLinkTargetBlank() {
+function setTargetBlank() {
   jQuery("a:not([href^='https://someone.tw'])").attr('target', '_blank');
 }
 
@@ -21,23 +23,36 @@ function setImageDescriptionCSS() {
   jQuery(".entry-content p:has('img')").addClass("textDescription");
 }
 
-function hidePrevNexBtn() {
+function hideElement() {
   jQuery(".nav-previous").hide();
   jQuery(".nav-next").hide();
-}
-
-function hidePostFooter() {
   jQuery(".entry-footer").hide();
 }
 
-function addCC() {
-  const text="若無特別聲明，本站圖文皆採 CC 授權 [BY-NC-SA]";
+function changeCopyRight() {
+  const text = padBetweenCnEn("若無特別聲明，本站圖文皆採CC授權 [BY-NC-SA]", "<span class='cnEnSpace'></span>");
   jQuery(".site-info").html(text);
 }
 
-function changeDiscussTitle(){
+function changeDiscussTitle() {
   const text = "留言";
   jQuery("#reply-title").text(text);
+}
+
+function appendSupTag() {
+  const SELECTOR = ".wp-block-jetpack-markdown";
+  const targetDOMs = jQuery(SELECTOR).toArray();
+  let counter = 1;
+  while (targetDOMs.length > 0) {
+    const dom = targetDOMs[0];
+    const sup = `[${counter}]`;
+    if (dom.innerHTML.includes(sup)) {
+      dom.innerHTML = dom.innerHTML.replace(sup, `<sup>${sup}</sup>`);
+      counter++;
+    } else {
+      targetDOMs.shift();
+    }
+  }
 }
 
 function padCnEnAll() {
