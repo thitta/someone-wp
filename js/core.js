@@ -16,6 +16,7 @@ function helloSomeone() {
 }
 
 function setTargetBlank() {
+  jQuery("code>a").contents().unwrap()
   jQuery("a:not([href^='https://someone.tw'])").attr('target', '_blank');
 }
 

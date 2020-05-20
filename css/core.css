@@ -71,7 +71,7 @@ body:not(.site-title) {
 }
 
 .entry-content :not(blockquote) p {
-    margin: .65em 0;
+    margin: .75em 0;
 }
 
 .entry-content blockquote p {
@@ -177,7 +177,7 @@ pre {
 sup {
     color: #808080 !important;
     bottom: 0.3em !important;
-    font-size: 0.8em !important;
+    font-size: 0.9em !important;
 }
 
 /* ======== hide theme element ======== */
