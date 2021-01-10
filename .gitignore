@@ -3,5 +3,7 @@ private
 img
 markdown
 others
-
+node_modules
+js/out
+package-lock.json
 

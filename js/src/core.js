@@ -57,7 +57,7 @@ function appendSupTag() {
 }
 
 function padCnEnAll() {
-  const SELECTORS = [".entry-title", ".entry-content > div:not(.code-block)"];
+  const SELECTORS = [".entry-title", ".entry-content > div:not(.code-block)", ".entry-content p"];
   SELECTORS.forEach(function (selector) {
     jQuery(selector).each(function () {
       const e = jQuery(this);
